@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feed - Want Some Tea?</title>
+<meta name="description" content="Browse the latest posts, search, and sort on the Want Some Tea? feed." />
+<link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-dvh flex flex-col">
+  <header class="card mx-auto max-w-6xl mt-4 mb-6">
+  <nav class="flex items-center justify-between px-20 py-2 gap-10">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/assets/logo.png" alt="Want the tea logo" class="w-32 sm:w-40" />
+    </a>
+
+    <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <li><a href="/" class="nav-link" aria-current="page">Auth</a></li>
+      <li><a href="/feed/" class="nav-link active">Feed</a></li>
+      <li><a href="/profile/" class="nav-link">Profile</a></li>
+    </ul>
+
+    <details class="relative md:hidden">
+      <summary
+        class="list-none p-2 rounded-md hover:bg-gray-100 cursor-pointer"
+        aria-label="Open menu"
+      >
+        <span class="block w-6 h-0.5 bg-(--text) mb-1"></span>
+        <span class="block w-6 h-0.5 bg-(--text) mb-1"></span>
+        <span class="block w-6 h-0.5 bg-(--text)"></span>
+      </summary>
+
+      <div class="absolute right-0 mt-2 w-40 card p-2">
+        <ul class="flex flex-col gap-1 text-sm font-medium">
+          <li><a href="/" class="nav-link block px-2 py-2 rounded-md active" aria-current="page">Auth</a></li>
+          <li><a href="/feed/" class="nav-link block px-2 py-2 rounded-md">Feed</a></li>
+          <li><a href="/profile/" class="nav-link block px-2 py-2 rounded-md">Profile</a></li>
+        </ul>
+      </div>
+    </details>
+  </nav>
+</header>
+<main class="max-w-5xl mx-auto p-8 space-y-8">
+  <section class="card p-4 sticky top-0 z-10">
+    <form action="/feed/" method="get" class="grid gap-4 md:grid-cols-2" aria-label="Create post">
+      <div class="md:col-span-2">
+        <label for="q" class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+        <input
+          id="q"
+          name="q"
+          type="search"
+          placeholder="Search posts…"
+          class="w-full border border-gray-300 rounded-md p-2 outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label for="sort" class="block text-sm font-medium text-gray-700 mb-1">Sort by</label>
+        <select
+          id="sort"
+          name="sort"
+          class="w-full border border-gray-300 rounded-md p-2 outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="latest">Latest</option>
+          <option value="popular">Most popular</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+    </form>
+  </section>
+
+  <section class="bg-white rounded-xl shadow p-4">
+    <h2 class="text-lg font-semibold mb-3">Create a new post</h2>
+    <form class="grid gap-4 md:grid-cols-2" aria-label="Create post">
+      <div class="md:col-span-2">
+        <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+        <input
+          id="title"
+          name="title"
+          type="text"
+          required
+          placeholder="Give your post a title"
+          class="w-full border border-gray-300 rounded-md p-2 outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label for="image" class="block text-sm font-medium text-gray-700 mb-1">Image URL (optional)</label>
+        <input
+          id="image"
+          name="image"
+          type="url"
+          placeholder="https://example.com/image.jpg"
+          class="w-full border border-gray-300 rounded-md p-2 outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category (optional)</label>
+        <input
+          id="category"
+          name="category"
+          type="text"
+          placeholder="Design, Travel, Code…"
+          class="w-full border border-gray-300 rounded-md p-2 outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div class="md:col-span-2">
+        <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Content</label>
+        <textarea
+          id="content"
+          name="content"
+          rows="3"
+          required
+          placeholder="Write something interesting…"
+          class="w-full border border-gray-300 rounded-md p-2 outline-none focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+      </div>
+
+      <div class="md:col-span-2 flex justify-end">
+        <button
+          type="submit"
+          class="btn-brand w-full sm:w-auto"
+        >
+          Post
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <section aria-label="Posts">
+    <h2 class="sr-only">Posts</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="card post-card overflow-hidden">
+        <div class="aspect-video bg-gray-200"></div>
+        <div class="p-4 space-y-2">
+          <h3 class="font-semibold text-lg leading-tight">Did you hear?</h3>
+          <p class="text-sm text-gray-600">Someone from the design team just launched a secret side project...</p>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <span>by Anna</span>
+            <span>•</span>
+            <time datetime="2025-11-01">Nov 1</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="card post-card overflow-hidden">
+        <div class="aspect-video bg-gray-200"></div>
+        <div class="p-4 space-y-2">
+          <h3 class="font-semibold text-lg leading-tight">Tiny whispers</h3>
+          <p class="text-sm text-gray-600">There is a new collaboration brewing — apparently two unlikely profiles teamed up on something</p>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <span>by Anna</span>
+            <span>•</span>
+            <time datetime="2025-10-28">Oct 28</time>
+          </div>
+        </div>
+      </article>
+
+      <article class="card post-card overflow-hidden">
+        <div class="aspect-video bg-gray-200"></div>
+        <div class="p-4 space-y-2">
+          <h3 class="font-semibold text-lg leading-tight">Word around the feed</h3>
+          <p class="text-sm text-gray-600">Rumor says a mysterious user might drop a forest-themed post later today...</p>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <span>by Anna</span>
+            <span>•</span>
+            <time datetime="2025-10-20">Oct 20</time>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="text-center text-sm text-(--muted) py-6 opacity-80">
+  © 2025 Want Some Tea?
+</footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "social-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/styles/input.css -o ./public/assets/styles.css --watch",
+    "build": "tailwindcss -i ./src/styles/input.css -o ./public/assets/styles.css --minify",
+    "preview": "npx serve public -l 5173"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16"
+  }
+}
