@@ -1,18 +1,16 @@
-
 @import "tailwindcss";
-
 
 @layer base {
   :root {
-    --brand: #9abf80;        
-    --brand-600: #7b9f68;    
-    --accent: #e2b97f;      
-    --surface: #f8f5ef;     
-    --bg: #f3eee5;           
-    --text: #443c35;         
-    --muted: #7d756d;        
-    --radius: 14px;
-    --shadow: 0 6px 20px rgba(50, 40, 30, 0.06);
+    --brand: #5f8f60;
+    --brand-600: #3f6f45;
+    --accent: #d89a5b;
+    --surface: #fffaf1;
+    --bg: #dde8d6;
+    --text: #2f2924;
+    --muted: #6f665e;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(50, 40, 30, 0.10);
   }
 
   body {
@@ -22,31 +20,39 @@
   }
 }
 
-
 @layer utilities {
   .btn-brand {
-    @apply text-white px-4 py-2 font-medium transition;
+    @apply text-white px-5 py-2 font-semibold transition;
     background: var(--brand);
     border-radius: var(--radius);
-    
   }
-  .btn-brand:hover { background: var(--brand-600); }
+
+  .btn-brand:hover {
+    background: var(--brand-600);
+    transform: translateY(-1px);
+  }
 
   .card {
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-  }
-  .post-card {
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  }
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(50, 50, 40, 0.08);
-    border: 1px solid var(--brand);
+    border: 1px solid rgba(95, 143, 96, 0.16);
   }
 
-   .nav-link {
+  .post-card {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(50, 50, 40, 0.14);
+    border-color: var(--brand);
+  }
+
+  .nav-link {
     position: relative;
     padding-bottom: 4px;
     color: var(--text);
@@ -76,11 +82,50 @@
     width: 100%;
     background-color: var(--brand-600);
   }
-  summary::-webkit-details-marker { display: none; }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 
-  details[open] > div { animation: menuIn 120ms ease-out; }
-@keyframes menuIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  details[open] > div {
+    animation: menuIn 120ms ease-out;
+  }
+  @keyframes menuIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
+
+.post-image {
+  height: 170px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(95, 143, 96, 0.18);
+}
+
+.post-image span {
+  background: rgba(255, 250, 241, 0.9);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+}
+
+.tea-card-1 {
+  background: linear-gradient(135deg, #dfead7, #fff4d8);
+}
+
+.tea-card-2 {
+  background: linear-gradient(135deg, #f6dfc7, #e6efd8);
+}
+
+.tea-card-3 {
+  background: linear-gradient(135deg, #d8eadc, #f8ead7);
 }
