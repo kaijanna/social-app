@@ -3,6 +3,7 @@
 A calm, tea-inspired social media prototype built with **Tailwind CSS** for the CSS Frameworks course assignment.
 
 ![Screenshot of site](./public/assets/Screenshot-new26.png)
+[Live Site](https://wantthetea.netlify.app/)
 
 ---
 ## Improvements Made for Portfolio
