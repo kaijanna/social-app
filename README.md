@@ -1,10 +1,21 @@
- # Want Some Tea?
+ # Want The Tea?
 
 A calm, tea-inspired social media prototype built with **Tailwind CSS** for the CSS Frameworks course assignment.
 
-![Screenshot of site](./public/assets/screenshot.png)
+![Screenshot of site](./public/assets/Screenshot-new26.png)
+[Live Site](https://wantthetea.netlify.app/)
 
 ---
+## Improvements Made for Portfolio
+
+Before adding this project to my portfolio, I revisited the assignment and improved several parts of the user interface:
+
+- Redesigned the navigation layout for better spacing and visual balance.
+- Improved the authentication page with a cleaner and more spacious layout.
+- Added collapsible post creation on the feed page to reduce visual clutter.
+- Enhanced post cards with category badges and improved styling.
+- Refined colors, spacing and responsive behavior across the site.
+- Updated project documentation and screenshots.
 
 ## About the project
 This project was created for the **CSS Frameworks** course assignment (Option 2).  
